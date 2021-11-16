@@ -16,6 +16,23 @@ const INITIAL_USER = [
 
 function App() {
   const [users, setUsers] = useState(INITIAL_USER);
+  const [products, setProducts] = useState('');
+    const [productcodes, setProductCode] = useState(0);
+    const [productdescriptions, setProductsDescriptions] = useState('');
+
+    const addUsers = (e) => {
+        e.preventDefault();
+        const newUser = {
+            id: Math.random(),
+            product: products,
+            productcode: productcodes,
+            productdescription: productdescriptions
+        }
+        setUsers([...users, newUser])
+        setProducts('');
+        setProductsDescriptions('');
+        setProductCode('');
+    }
 
   return (
     <>
@@ -26,7 +43,14 @@ function App() {
             <Route path='/' element={<Main />} />
             <Route path='/product' element={<Product initial={users}/>} />
             <Route path='/edit' element={<ProductEdit />} />
-            <Route path='/add' element={<ProductAdd user={users}/>} />
+            <Route path='/add' element={<ProductAdd 
+            products={products} 
+            productcodes={productcodes} 
+            productdescriptions={productdescriptions}
+            setProductCode={setProductCode}
+            setProducts={setProducts}
+            setProductsDescriptions={setProductsDescriptions}
+            addUsers={addUsers}/>} />
           </Routes>
       </div>
       <Footer />

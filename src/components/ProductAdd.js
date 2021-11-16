@@ -1,26 +1,13 @@
-import { useState } from "react";
+
 import { Button } from "react-bootstrap";
 
 
-function ProductAdd(props){
-    const [users, setUsers] = useState(props.user);
-    const [products, setProducts] = useState('');
-    const [productcodes, setProductCode] = useState(0);
-    const [productdescriptions, setProductsDescriptions] = useState('');
 
-    const addUsers = (e) => {
-        e.preventDefault();
-        const newUser = {
-            id: Math.random(),
-            product: products,
-            productcode: productcodes,
-            productdescription: productdescriptions
-        }
-        setUsers([...users, newUser])
-        setProducts('');
-        setProductsDescriptions('');
-        setProductCode('');
-    }
+function ProductAdd({addUsers, productcodes
+    , products, productdescriptions
+    ,setProductCode, setProducts, setProductsDescriptions}){
+    
+    
 
     return(
         <div className="product-edit">
