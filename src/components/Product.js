@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { Table, Button} from "react-bootstrap";
 
-const INITIAL_USER = [
-    {id: Math.random(), product: 'Dolap', productcode: '1211111111', productdescription: 'açılır kapanır bir eşya'},
-    
-]
 
-function Product() {
-    const [users, setUsers] = useState(INITIAL_USER);
+  
+
+function Product(props) {
+    const [users, setUsers] = useState(props.initial);
 
     const onDelete = (id) => {
         const newUsers = users.filter(user =>  user.id !== id);
@@ -26,7 +24,7 @@ function Product() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        { users ? 
+                                    { users ? 
                                         users.map(user => 
                                             <tr key={user.id}>
                                                 <td>
@@ -49,7 +47,7 @@ function Product() {
                                 </tbody>
                                 
                         </Table>
-                   
+                                            
                    </section>
     )
 }

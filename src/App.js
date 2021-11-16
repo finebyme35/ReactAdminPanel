@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
@@ -7,8 +8,14 @@ import ProductEdit from "./components/ProductEdit";
 import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
 
-function App() {
 
+const INITIAL_USER = [
+  {id: Math.random(), product: 'Dolap', productcode: '1211111111', productdescription: 'açılır kapanır bir eşya'},
+  
+]
+
+function App() {
+  const [users, setUsers] = useState(INITIAL_USER);
 
   return (
     <>
@@ -17,9 +24,9 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='/product' element={<Product />} />
+            <Route path='/product' element={<Product initial={users}/>} />
             <Route path='/edit' element={<ProductEdit />} />
-            <Route path='/add' element={<ProductAdd />} />
+            <Route path='/add' element={<ProductAdd user={users}/>} />
           </Routes>
       </div>
       <Footer />
