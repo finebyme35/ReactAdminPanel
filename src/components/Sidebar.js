@@ -11,7 +11,7 @@ function Sidebar() {
                         <Link to='/product' class="side-link">Ürünler</Link>
                     </li>
                     <li className="side-item">
-                        <Link to='/ekleme' class="side-link">Ürün Ekle</Link>
+                        <Link to='/add' class="side-link">Ürün Ekle</Link>
                     </li>
                     <li className="side-item">
                         <Link to='/edit' class="side-link">Ürün Düzenle</Link>
