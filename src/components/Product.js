@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Table, Button} from "react-bootstrap";
 
 
+
+
   
 
 function Product(props) {
     const [users, setUsers] = useState(props.initial);
-
+    
     const onDelete = (id) => {
         const newUsers = users.filter(user =>  user.id !== id);
         setUsers(newUsers);
     }
+   
     return(
         <section className="product">
                 <h1 className="product-title">Ürünler</h1>
@@ -37,7 +40,7 @@ function Product(props) {
                                                     {user.productdescription}
                                                 </td>
                                                 <td>
-                                                    <Button variant="warning">Edit</Button>{' '}
+                                                    <Button variant="warning" onClick={() => props.onEdit(user.id)} >Edit</Button>{' '}
                                                     <Button variant="danger" onClick={() => onDelete(user.id)}>Delete</Button>
                                                 </td>
                                             </tr>

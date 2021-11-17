@@ -56,7 +56,7 @@ code {
 }
 .side-content{
   margin: 2.5rem 2rem;
-  flex: 0 1 6rem;
+  flex: 0 1 17rem;
 }
 .side-title{
   
@@ -68,6 +68,16 @@ code {
 }
 .side-item{
   padding: 1rem;
+  margin: 1rem;
+  
+}
+.side-link{
+  text-decoration: none;
+  color: black;
+  border: 0.01rem solid rgb(49, 44, 40); 
+  padding: 1rem;
+  border-radius: 2rem;
+  
 }
 
 .main-content{
@@ -80,7 +90,9 @@ code {
 }
 
 .product-title{
-  margin-left: 30rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -93,22 +105,35 @@ code {
 
 }
 .product-edititle{
-  margin: 0 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .product-label{
   padding: 1rem 0.5rem;
-  margin: 0 20rem;
+  margin-right: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
 }
 .product-input{
-  display: flex;
   border: 0.1rem solid black;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin: 0 20rem;
+}
+.inputs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-sbmt{
-  margin: 2rem 28rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: orange;
+  text-shadow: 2rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .footer{

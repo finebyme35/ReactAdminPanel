@@ -1,40 +1,47 @@
-const { Button } = require("react-bootstrap");
+import Buttons from "./Buttons";
+import Inputs from "./Inputs";
 
 
 
 
 
-function ProductEdit() {
+function ProductEdit({onEdit, productcodes
+    , products, productdescriptions
+    ,setProductCode, setProducts, setProductsDescriptions}) {
     return(
         <div className="product-edit">
                 <h1 className="product-edititle">Edit Product</h1>
                 <hr />
-                <form>
+                <form onSubmit={onEdit}>
+                    
                     <label htmlFor="product-names" className="product-label">Edit Product Name: </label>
-                    <input 
-                    type="text" 
-                    placeholder="Name" 
-                    id="product-names"
-                    name="product-names"
-                    className="product-input"
-                    ></input>
+
+                    <Inputs id="product-names"
+                     name="product-names"
+                     placeholder="Ürün İsmi"
+                    value={products}
+                        onChange={(e) => setProducts(e.target.value)}/>
+                    
                     <label htmlFor="product-codes" className="product-label">Edit Product Code: </label>
-                    <input 
-                    type="number" 
-                    placeholder="Product Code" 
-                    id="product-codes"
-                    name="product-codes"
-                    className="product-input"
-                    ></input>
+                    <Inputs 
+                        type="number" 
+                        placeholder="Ürün Kodu" 
+                        id="product-codes"
+                        name="product-codes"
+                    value={productcodes}
+                    onChange={(e) => setProductCode(e.target.value)}
+                    />
                     <label htmlFor="product-descriptions" className="product-label">Edit Product Description: </label>
-                    <input 
+                    <Inputs 
                     type="text" 
                     placeholder="Ürün Özellikleri" 
                     id="product-descriptions"
                     name="product-descriptions"
+                    value={productdescriptions}
+                    onChange={(e) => setProductsDescriptions(e.target.value)}
                     className="product-input"
-                    ></input>
-                    <Button variant="warning" className="btn-sbmt">Submit</Button>
+                    />
+                    <Buttons type="submit"/>
                 </form>
         </div>
     )

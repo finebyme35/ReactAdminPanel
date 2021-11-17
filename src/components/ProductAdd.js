@@ -1,5 +1,5 @@
-
-import { Button } from "react-bootstrap";
+import Buttons from "./Buttons";
+import Inputs from "./Inputs";
 
 
 
@@ -15,7 +15,7 @@ function ProductAdd({addUsers, productcodes
             <hr />
            <form onSubmit={addUsers}>
             <label htmlFor="product-name" className="product-label">Ürün Adı: </label>
-                <input 
+                <Inputs 
                 type="text" 
                 placeholder="Ürün Adı" 
                 id="product-name"
@@ -23,9 +23,9 @@ function ProductAdd({addUsers, productcodes
                 value={products}
                 onChange={(e) => setProducts(e.target.value)}
                 className="product-input"
-                ></input>
+                 />
                 <label htmlFor="product-code" className="product-label">Ürün Kodu: </label>
-                <input 
+                <Inputs
                 type="number" 
                 placeholder="Ürün Kodu" 
                 id="product-code"
@@ -33,9 +33,9 @@ function ProductAdd({addUsers, productcodes
                 value={productcodes}
                 onChange={(e) => setProductCode(e.target.value)}
                 className="product-input"
-                ></input>
+                 />
                 <label htmlFor="product-description" className="product-label">Ürün Özellikleri: </label>
-                <input 
+                <Inputs 
                 type="text" 
                 placeholder="Özellikleri" 
                 id="product-description"
@@ -43,8 +43,8 @@ function ProductAdd({addUsers, productcodes
                 value={productdescriptions}
                 onChange={(e) => setProductsDescriptions(e.target.value)}
                 className="product-input"
-                ></input>
-                <Button variant="warning" type="submit" className="btn-sbmt">Submit</Button>
+                 />
+                <Buttons type="submit"/>
            </form>
         </div>
     )

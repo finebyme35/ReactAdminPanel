@@ -33,6 +33,11 @@ function App() {
         setProductsDescriptions('');
         setProductCode('');
     }
+    const onEdit = (id, e) => {
+      const oldData = users.filter(user => user.id === id)
+      console.log(oldData);
+  }
+  
 
   return (
     <>
@@ -41,8 +46,16 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='/product' element={<Product initial={users}/>} />
-            <Route path='/edit' element={<ProductEdit />} />
+            <Route path='/product' element={<Product initial={users} onEdit={onEdit}
+            />} />
+            <Route path='/edit' element={<ProductEdit onEdit={onEdit}
+            products={products} 
+            productcodes={productcodes} 
+            productdescriptions={productdescriptions}
+            setProductCode={setProductCode}
+            setProducts={setProducts}
+            setProductsDescriptions={setProductsDescriptions}
+            />} />
             <Route path='/add' element={<ProductAdd 
             products={products} 
             productcodes={productcodes} 
